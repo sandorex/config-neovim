@@ -1,10 +1,10 @@
 vim.opt.encoding = 'utf-8'
 
--- get config path
-local cfg = vim.fn.stdpath('config')
-
 -- load all the plugins
 require('plugins')
+
+-- get config path
+local cfg = vim.fn.stdpath('config')
 
 -- load machine specific file if it exists
 local custom_lua_file = 'custom_' .. vim.fn.hostname():lower()
@@ -45,3 +45,4 @@ vim.opt.updatetime = 300
 -- TODO: make it shown only in files that can be debugged / show the diagnostics...
 -- Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved
 vim.opt.signcolumn = 'yes'
+
