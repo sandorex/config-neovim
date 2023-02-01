@@ -24,6 +24,9 @@ vim.opt.number = true
 -- todo: make relative numbers show on keybinding instead
 vim.opt.relativenumber = true
 
+-- allow comments in JSON
+vim.cmd([[autocmd FileType json syntax match Comment +\/\/.\+$+]])
+
 -- set rulers todo: figure out how much can fit on phone/tablet
 --vim.opt.colorcolumn = '80,100'
 
@@ -44,5 +47,5 @@ vim.opt.updatetime = 300
 
 -- TODO: make it shown only in files that can be debugged / show the diagnostics...
 -- Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved
-vim.opt.signcolumn = 'yes'
+--vim.opt.signcolumn = 'yes'
 
