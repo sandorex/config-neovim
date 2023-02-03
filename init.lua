@@ -30,11 +30,18 @@ vim.cmd([[autocmd FileType json syntax match Comment +\/\/.\+$+]])
 -- set rulers todo: figure out how much can fit on phone/tablet
 --vim.opt.colorcolumn = '80,100'
 
----- EXPERIMENTAL ----
 -- TODO: test: set whichwrap+=<,>,h,l,[,]
 
 -- map : to space in normal mode (very useful)
-vim.cmd("nnoremap <space> :")
+--vim.cmd("nnoremap <space> :")
+
+-- its a waste to make space only do commands as its not used that often
+vim.cmd("nnoremap <space>; :")
+
+-- often used
+vim.cmd("nnoremap <space>q :q<CR>")
+vim.cmd("nnoremap <space>w :w<CR>")
+vim.cmd("nnoremap <space>e :e ")
 
 ---- coc recommended settings!! ----
 -- Some servers have issues with backup files, see #649
