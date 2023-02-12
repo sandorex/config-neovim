@@ -19,10 +19,16 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+-- enable undo history persistance between sessions (neovim has sane defaults)
+vim.opt.undofile = true
+
 -- show hybrid line numbers
 vim.opt.number = true
 -- todo: make relative numbers show on keybinding instead
-vim.opt.relativenumber = true
+--vim.opt.relativenumber = true
+
+-- enable mouse support
+--vim.opt.mouse = 'a'
 
 -- allow comments in JSON
 vim.cmd([[autocmd FileType json syntax match Comment +\/\/.\+$+]])
@@ -32,16 +38,24 @@ vim.cmd([[autocmd FileType json syntax match Comment +\/\/.\+$+]])
 
 -- TODO: test: set whichwrap+=<,>,h,l,[,]
 
--- map : to space in normal mode (very useful)
---vim.cmd("nnoremap <space> :")
-
 -- its a waste to make space only do commands as its not used that often
+vim.cmd("nmap <space> <nop>")
 vim.cmd("nnoremap <space>; :")
+
+-- reload config
+vim.cmd("nnoremap <space><F12> :source ~/.config/nvim/init.lua<CR>")
 
 -- often used
 vim.cmd("nnoremap <space>q :q<CR>")
 vim.cmd("nnoremap <space>w :w<CR>")
+
+-- edit file
 vim.cmd("nnoremap <space>e :e ")
+vim.cmd("nnoremap <space>E :tabe ")
+
+-- switch tabs
+vim.cmd("nnoremap <M-,> :tabp<CR>")
+vim.cmd("nnoremap <M-.> :tabn<CR>")
 
 ---- coc recommended settings!! ----
 -- Some servers have issues with backup files, see #649
