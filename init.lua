@@ -28,15 +28,20 @@ vim.opt.number = true
 --vim.opt.relativenumber = true
 
 -- enable mouse support
---vim.opt.mouse = 'a'
+vim.opt.mouse = 'a'
+
+-- TODO: exapnd this further
+vim.opt.wildignore:append('*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx')
+
+-- make cursor go over to the next line when it hits the end like
+-- literally every other editor ever?
+vim.opt.whichwrap:append('<,>,h,l,[,]')
 
 -- allow comments in JSON
 vim.cmd([[autocmd FileType json syntax match Comment +\/\/.\+$+]])
 
 -- set rulers todo: figure out how much can fit on phone/tablet
 --vim.opt.colorcolumn = '80,100'
-
--- TODO: test: set whichwrap+=<,>,h,l,[,]
 
 -- its a waste to make space only do commands as its not used that often
 vim.cmd("nmap <space> <nop>")
