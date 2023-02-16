@@ -28,7 +28,8 @@ vim.opt.number = true
 --vim.opt.relativenumber = true
 
 -- enable mouse support
-vim.opt.mouse = 'a'
+-- TODO: it can be useful but prevents copy on computer
+--vim.opt.mouse = 'a'
 
 -- TODO: exapnd this further
 vim.opt.wildignore:append('*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx')
